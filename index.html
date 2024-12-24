@@ -3,38 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random HTML</title>
+    <title>Exhibition Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to My Random Page!</h1>
-    <p>This is a paragraph with some <strong>bold text</strong> and a <a href="https://example.com" target="_blank">link</a>.</p>
-    <ul>
-        <li>List item one</li>
-        <li>List item two</li>
-        <li>List item three</li>
-    </ul>
-    <form action="/submit" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-    <table border="1">
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-        </tr>
-        <tr>
-            <td>Data 1</td>
-            <td>Data 2</td>
-        </tr>
-        <tr>
-            <td>Data 3</td>
-            <td>Data 4</td>
-        </tr>
-    </table>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="logo">Your Logo</div>
+        <div class="scroll-prompt">
+            <p>Scroll Down</p>
+            <span class="arrow">&#8595;</span>
+        </div>
+        <div class="navbar-loading">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#exhibition">Exhibition</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#exhibition">Exhibition</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Your Exhibition Title</h1>
+        <p>Welcome to our digital exhibition. Scroll down to explore.</p>
+    </section>
+
+    <!-- Individual Exhibition Section -->
+    <section id="exhibition" class="section">
+        <h2>Individual Exhibitions</h2>
+        <div class="grid">
+            <!-- Example Card -->
+            <div class="card" onclick="openPopup('artist1')">
+                <img src="artist1.jpg" alt="Artist 1">
+                <div class="card-info">
+                    <h3>Artist Name</h3>
+                </div>
+            </div>
+            <!-- Add more cards here -->
+        </div>
+    </section>
+
+    <!-- Popup for individual exhibition -->
+    <div id="popup" class="hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="popup-left">
+                <img src="artist1.jpg" alt="Artist">
+            </div>
+            <div class="popup-right">
+                <h3>Artist Name</h3>
+                <p>Project Description</p>
+                <p><a href="#">Social Media Link</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section">
+        <h2>Our Sponsors</h2>
+        <div class="sponsors-grid">
+            <!-- Example Sponsor Logo -->
+            <div class="sponsor">
+                <img src="sponsor1.jpg" alt="Sponsor 1">
+            </div>
+            <!-- Add more sponsor logos here -->
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Follow us on:</p>
+        <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
