@@ -5,7 +5,7 @@
     background-color: #000000;
 }
 
-li, a, button {
+li, a, button, p {
     font-family: "Josefin Sans", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -15,22 +15,35 @@ li, a, button {
 
 #land {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stacks the logo and paragraph vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
     height: 100vh; /* Makes the section full screen */
     text-align: center;
 }
 
+
 .logo {
-    max-width: 250px; /* Increases the size of the logo */
+    max-width: 500px; /* Increases the size of the logo */
     height: auto; /* Maintains aspect ratio */
 }
 
-.footer {
+.description {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #eeeeee;
+    margin-top: 20px; /* Adds spacing between the logo and the paragraph */
+    text-align: center; /* Centers the text below the logo */
+    max-width: 600px; /* Restricts the paragraph's width for better readability */
+    line-height: 1.5; /* Improves line spacing for readability */
+}
+
+.socials {
     display: flex;
     justify-content: center; /* Aligns icons horizontally in the center */
     align-items: center; /* Vertically aligns icons */
-    padding: 20px 0; /* Adds padding to the footer */
+    padding: 40px 0; /* Adds padding to the footer */
     list-style: none;
     gap: 20px; /* Adds spacing between icons */
     position: fixed; /* Ensures the footer stays at the bottom */
@@ -41,8 +54,27 @@ li, a, button {
     text-align: center; /* Centers the content */
 }
 
-.footer li {
+.socials a {
     display: inline-block; /* Ensures icons are next to each other */
+}
+
+.sponsors {
+    display: flex; /* Aligns the sponsor logos in a row */
+    justify-content: center; /* Centers the logos horizontally */
+    align-items: center; /* Aligns logos vertically */
+    gap: 30px; /* Adds space between logos */
+    margin-top: 20px; /* Adds space above the sponsors section */
+    list-style: none; /* Removes bullet points from the list */
+}
+
+.spons {
+    max-width: 100px; /* Restricts the size of sponsor logos */
+    height: auto; /* Maintains aspect ratio */
+    transition: transform 0.3s ease; /* Adds a hover effect transition */
+}
+
+.spons:hover {
+    transform: scale(1.1); /* Slightly enlarges the logo on hover */
 }
 
 header { 
