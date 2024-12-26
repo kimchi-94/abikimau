@@ -386,8 +386,12 @@ footer {
         flex-direction: row;
     }
 
-    #menu {
+    nav .btn {
         display: none;
+    }
+
+    #menu {
+        display: block;
     }
 
     #sponsors .header {
