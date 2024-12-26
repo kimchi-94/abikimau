@@ -312,6 +312,7 @@ footer {
 
     #menu {
         display: block;
+        cursor: pointer;
     }
 
     .links {
