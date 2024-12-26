@@ -1,3 +1,16 @@
+/* ===============================
+   1. CSS Variables & Reset
+   =============================== */
+   :root {
+    --background: rgb(24,24,24);
+    --second-background: rgb(21,21,21);
+    --text-color: white;
+    --border-color: rgb(49, 49, 49);
+    --border-hover: rgb(100, 100, 100);
+    --section-padding: 5% 15%;
+    --transition: 0.3s ease-in-out;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +18,11 @@
     list-style: none;
     scroll-behavior: smooth;
     font-family: 'Poppins';
-    color: white;
+    color: var(--text-color);
 }
 
 a {
     text-decoration: none;
-}
-
-:root {
-    --background: rgb(24,24,24);
-    --second-background: rgb(21,21,21);
 }
 
 body {
@@ -22,95 +30,86 @@ body {
     background-color: var(--background);
 }
 
+/* ===============================
+   2. Navigation Styles
+   =============================== */
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 2em 15%;
+    width: 1200px;
+    max-width: 90%;
+    margin: 1rem auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: rgba(15, 15, 15, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    align-items: center;
+    position: relative;
+    z-index: 100;
 }
 
-ul {
+nav .logo {
+    font-weight: bold;
+}
+
+nav .links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
-    align-items: center;
-    gap: 3em;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 20px);  /* Responsive gap that shrinks on smaller screens */
+    flex-wrap: nowrap;  /* Prevent wrapping */
 }
 
 nav ul a {
-    color: white;
+    color: var(--text-color);
     opacity: 0.7;
-    transition: 0.2s ease-in-out;
+    transition: var(--transition);
+    white-space: nowrap;  /* Prevent text wrapping */
+    font-size: clamp(0.8rem, 1.5vw, 1rem);  /* Responsive font size */
 }
 
 nav ul a:hover {
     opacity: 1;
 }
 
-.logo {
-    font-size: 2em;
-    color: white;
-    font-weight: 800;
-    opacity: 0.8;
-    transition: 0.2s ease-in-out;
-}
-
-.logo:hover {
-    opacity: 1;
-}
-
-.btn {
+/* ===============================
+   3. Button Styles
+   =============================== */
+.btn, .btn-exhibition {
     padding: 0.5em 1em;
-    color: white;
+    color: var(--text-color);
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 0.5em;
     font-size: 1.1em;
-    border: 2px solid white;
+    border: 2px solid var(--text-color);
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: var(--transition);
 }
 
-.btn:hover {
-    background-color: white;
-    color: var(--background)
+.btn:hover, .btn-exhibition:hover {
+    background-color: var(--text-color);
+    color: var(--background);
 }
 
-span {
-    color: white;
-    background: linear-gradient(-225deg, #20E2D7 0%, #F9FEA5 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.btn-exhibition {
+    display: inline-block;
+    margin-top: 1em;
 }
 
-#menu {
-    color: white;
-    font-size: 3em;
-    display: none;
-}
-
+/* ===============================
+   4. Section Styles
+   =============================== */
 section {
     min-height: 100vh;
-    padding: 5% 15%;
+    padding: var(--section-padding);
 }
 
+/* Home Section */
 #home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2em;
-    color: white;
-}
-
-#home img {
-    width: 35vw;
-    margin-top: 3em;
 }
 
 .info-box {
@@ -122,38 +121,24 @@ section {
 }
 
 .info-box h1 {
-    font-size: 5em;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 500;
 }
 
 .info-box h3 {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 400;
 }
 
-.info-box p {
-    opacity: 0.7;
-}
-
-/*::-webkit-scrollbar {
-    width: 20px;
-    background-color: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);
-}*/
-
+/* About Section */
 #about {
     background-color: var(--second-background);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2em;
-    padding: 5% 15%;
     flex-wrap: nowrap;
     width: 100%;
-    box-sizing: border-box;
 }
 
 #about img {
@@ -167,170 +152,31 @@ section {
 .about-info {
     max-width: 50%;
     flex-grow: 1;
-    color: white;
     text-align: left;
 }
 
-.about-info h1 {
-    font-size: 3em;
-    margin-bottom: 1em;
-}
-
-.about-info p {
-    font-size: 1.2em;
-    line-height: 1.8;
-    color: white;
-    opacity: 0.8;
-}
-
-.about-box h2 {
-    font-size: 2.5em;
-}
-
-.btn-exhibition {
-    display: inline-block;
-    padding: 0.5em 1em;
-    color: white;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1.1em;
-    border: 2px solid white;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    margin-top: 1em;
-}
-
-.btn-exhibition:hover {
-    background-color: white;
-    color: var(--background)
-}
-
-.btn-exhibition a {
-    color: white; /* Set desired color for the text */
-    text-decoration: none; /* Remove underline from the link */
-}
-
-.btn-exhibition a:hover {
-    color: var(--background); /* Change the color on hover if needed */
-}
-
-
-#services {
-    background-color: var(--background);
-}
-
-.header {
-    text-align: center;
-    font-size: 5em;
-    margin: 0.5em 0;
-}
-
+/* Sponsors Section */
 .sponsors-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 2em; /* Space between the boxes */
-    padding: 2em; /* Optional padding around the container */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    padding: 2em;
 }
 
 .box {
-    border: 3px solid rgb(49, 49, 49);
+    border: 3px solid var(--border-color);
     border-radius: 0.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    object-fit: cover;
     padding: 3em;
-    gap: 2em;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.box:hover {
-    border: 3px solid rgb(100, 100, 100);
-
-}
-
-.box img {
-    min-width: 100px; /* Ensures visible image */
-    max-width: 100%; /* Responsive scaling */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 0.5em;
-}
-
-#connect {
-    background-color: var(--second-background);
-}
-
-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 2em;
+    transition: var(--transition);
 }
 
-form .input-box {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 1em;
-}
-
-.input-box span {
-    font-size: 1.5em;
-}
-
-form input {
-    font-size: 1.3em;
-    padding: 1em 5em;
-    border-radius: 0.5em;
-    border: none;
-    outline: none;
-}
-
-form input:focus {
-    background: rgb(229, 229, 229);
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10em;
-    bottom: 0;
-    background-color: var(--background);
-    width: 100%;
-    padding: 5em 15%;
-}
-
-.col-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    max-width: 500px;
-}
-
-.social-icons {
-    display: flex;
-    align-items: baseline;
-    justify-content: left;
-    gap: 4em;
-}
-
-.col-right .social-icons i {
-    font-size: 2em;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.social-icons i:hover {
-    color: white;
-}
-
+/* ===============================
+   5. Slider Styles
+   =============================== */
 .slider {
     height: 100vh;
     margin-top: -50px;
@@ -370,7 +216,7 @@ footer {
     z-index: 1;
 }
 
-.slider .list .item .content p:nth-child(1){
+.slider .list .item .content p:nth-child(1) {
     text-transform: uppercase;
     letter-spacing: 10px;
 }
@@ -386,16 +232,16 @@ footer {
 }
 
 @keyframes showContent {
-    to{
+    to {
         transform: translateY(0);
         filter: blur(0);
         opacity: 1;
     }
 }
 
-.slider .list .item.active p:nth-child(1), 
-.slider .list .item.active h2, 
-.slider .list .item.active p:nth-child(3){
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
@@ -409,6 +255,8 @@ footer {
 .slider .list .item.active p:nth-child(3) {
     animation-duration: 1.3s;
 }
+
+/* Slider - Arrows*/
 
 .arrows {
     position: absolute;
@@ -434,6 +282,8 @@ footer {
     color: black;
 }
 
+/* Slider - Thumbnails */
+
 .thumbnail {
     position: absolute;
     bottom: 50px;
@@ -445,7 +295,6 @@ footer {
     padding: 0 50px;
     box-sizing: border-box;
     overflow: auto;
-    justify-content: center;
 }
 
 .thumbnail::-webkit-scrollbar {
@@ -457,6 +306,7 @@ footer {
     height: 220px;
     filter: brightness(.5);
     transition: .5s;
+    flex-shrink: 0;
 }
 
 .thumbnail .item img {
@@ -467,7 +317,7 @@ footer {
 }
 
 .thumbnail .item.active {
-    filter:brightness(1.5);
+    filter: brightness(1.5);
 }
 
 .thumbnail .item .content {
@@ -475,129 +325,151 @@ footer {
     inset: auto 10px 10px 10px;
 }
 
-
-
-
-
-
-
-
-/* Screen Adjustments for Resizing */
-
-@media(max-width:968px) {
-    section{
-        padding: 8em 15%;
-    }
-
-    nav .btn {
-        display: none;
-    }
-
-    #menu {
-        display: block;
-        cursor: pointer;
-    }
-
-    .links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 1em 3em;
-        color: white;
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.9);
-    }
-
-    .links a {
-        margin: 2em 0;
-        display: block;
-        font-size: 1.5em;
-        color: white;
-    }
-
-    .links.active {
-        display: flex;
-    }
-
-    #home h1 {
-        font-size: 4em;
-    }
-
-    #home h3 {
-        font-size: 2em;
-    }
-
-    #home img {
-        width: 24vw;
-    }
-
-    #about {
-        flex-direction: column;
-    }
-
-    #about img {
-        width: 32vw;
-    }
-
-    #about h1 {
-        font-size: 3em;
-    }
-
-    #about ul {
-        font-size: 1em;
-    }
-
+/* ===============================
+   6. Form Styles
+   =============================== */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-@media (max-width:768px) {
-    #home h1 {
-        font-size: 2.5em;
-    }
+form .input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0.5em; /* Reduced from 1em */
+    width: 100%; /* Added to ensure consistent width */
+}
 
-    #home h3 {
-        font-size: 1.5em;
-    }
+.input-box span {
+    font-size: 1.2em; /* Reduced from 1.5em */
+    margin-bottom: 0.2em;
+}
 
-    #home img {
-        width: 32vw;
-    }
+form input {
+    width: 100%;
+    font-size: 1.3em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+}
 
-    .links {
-        display: flex;
-        flex-direction: row;
-    }
+form input:focus {
+    background-color: white;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
 
+#connect {
+    min-height: auto; /* Override the 100vh min-height */
+    padding-bottom: 3em; /* Reduce bottom padding */
+}
+
+/* ===============================
+   7. Footer Styles
+   =============================== */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 10em);
+    padding: 3em 15%;
+    background-color: var(--background);
+    margin-top: 0;
+}
+
+/* ===============================
+   8. Responsive Design
+   =============================== */
+@media (max-width: 1200px) {
+    .sponsors-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --section-padding: 5% 10%;
+    }
+    
+    #about {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #about img {
+        width: 60%;
+    }
+    
+    .about-info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+    }
+    
     nav .btn {
-        display: none;
+        padding: 0.4em 0.8em;  /* Smaller padding for button */
+        font-size: 0.9em;  /* Smaller font size */
     }
-
-    #menu {
-        display: block;
+    
+    .info-box {
+        width: 90%;
     }
-
-    #sponsors .header {
-        font-size: 3em;
-    }
-
-    #connect .header {
-        font-size: 3em;
-    }
-
-    #connect .input-box span {
-        font-size: 1.2em;
-    }
-
-    .input-box input {
-        padding: 0.5em 1em;
-    }
-
+    
     footer {
         flex-direction: column;
-        gap: 5em;
-        align-items: baseline;
+        gap: 3em;
+        text-align: center;
+        padding: 3em 5%;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    form input {
+        padding: 0.8em 2em;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --section-padding: 5% 5%;
     }
 
+    .arrows {
+        top: 10%;
+    }
+    
+    .sponsors-container {
+        grid-template-columns: 1fr;
+    }
+    
+    #about img {
+        width: 80%;
+    }
+    
+    .slider .list .item .content h2 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .thumbnail {
+        padding: 0.5rem;
+        justify-content: start;
+    }
+    
+    .thumbnail .item {
+        width: 100px;
+        height: 150px;
+    }
 }
