@@ -186,6 +186,35 @@ section {
     font-size: 2.5em;
 }
 
+.btn-exhibition {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 1em;
+}
+
+.btn-exhibition:hover {
+    background-color: white;
+    color: var(--background)
+}
+
+.btn-exhibition a {
+    color: white; /* Set desired color for the text */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.btn-exhibition a:hover {
+    color: var(--background); /* Change the color on hover if needed */
+}
+
+
 #services {
     background-color: var(--background);
 }
