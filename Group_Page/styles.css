@@ -222,8 +222,11 @@ section {
 }
 
 .slider .list .item .content h2 {
-    font-size: 100px;
+    font-size: clamp(2rem, min(8vw, 100px), 100px);
     margin: 0;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
 }
 
 .slider .list .item.active {
