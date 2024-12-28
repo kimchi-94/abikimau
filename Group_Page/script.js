@@ -16,7 +16,7 @@ next.onclick = function(){
 }
 
 //event prev click
-prev.oneclick = function(){
+prev.onclick = function(){
     itemActive = itemActive - 1;
     if(itemActive < 0){
         itemActive = countItem - 1;

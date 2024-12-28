@@ -289,12 +289,12 @@ section {
 
 .thumbnail {
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     z-index: 11;
     display: flex;
     gap: 10px;
     width: 100%;
-    height: 250px;
+    height: auto;
     padding: 0 50px;
     box-sizing: border-box;
     overflow: auto;
