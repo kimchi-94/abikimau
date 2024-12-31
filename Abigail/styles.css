@@ -1,0 +1,240 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  .section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Adjust Headings */
+h2 {
+    font-size: 36px;
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    margin-top: 0; 
+    text-align: center; 
+  }
+  
+  p {
+    margin-top: 20px; 
+    line-height: 1.6;
+  }
+  
+  /* Hero*/
+  #home {
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .navbar .nav-link {
+    font-size: 16px;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #4caf50;
+  }
+  
+  /* Navbar Logo */
+.navbar-brand img.navbar-logo {
+    height: 40px; /* Adjust size */
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  
+  #about {
+    position: relative;
+    background-image: url("Images/group_photo.jpg"); 
+    background-size: cover; /* scale img */
+    background-position: center; /* center img*/
+    background-repeat: no-repeat; /* no img repetition */
+    height: 100vh; /* restrict height of img to 'about us' section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  #about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*overlay*/
+    z-index: 1; /*text in forefront*/
+  }
+  
+  #about h2,
+  #about p {
+    position: relative; /*ensure text remains @ forefront*/
+    z-index: 2; /*ensure text is visible*/
+  }
+  
+  #about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Exhibits */
+#exhibits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #914e56; 
+    text-align: center;
+    padding: 20px;
+
+  }
+  
+  #exhibits h2 {
+    margin-bottom: 20px;
+  }
+  
+  .view-exhibits-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white; /* Keep text visible */
+    background-color: transparent; /* Transparent button */
+    border: 2px solid white; /* Optional: Add a border for visibility */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .view-exhibits-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly opaque black on hover */
+  }
+  
+  
+  /* Sponsors Section */
+#sponsors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#E6D389;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 20px; /* Spacing between items */
+    max-width: 800px;
+    width: 300%;
+  }
+  
+  .sponsor {
+    background-color:#1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    color:white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Contact*/
+ /* Contact Section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+  }
+  
+  #contact h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1a1a1a;
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color:#1a1a1a;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-group textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .submit-btn {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
