@@ -49,7 +49,7 @@
                 <div class="carousel-item"><img src="Images/image1.jpg" alt="Gallery Image 1"></div>
                 <div class="carousel-item"><img src="Images/image2.jpg" alt="Gallery Image 2"></div>
                 <div class="carousel-item"><img src="Images/image3.jpg" alt="Gallery Image 3"></div>
-                <!-- Duplicate images for seamless loop -->
+                <!-- Duplicated images for seamless loop -->
                 <div class="carousel-item"><img src="Images/image1.jpg" alt="Gallery Image 1"></div>
                 <div class="carousel-item"><img src="Images/image2.jpg" alt="Gallery Image 2"></div>
                 <div class="carousel-item"><img src="Images/image3.jpg" alt="Gallery Image 3"></div>
@@ -92,6 +92,7 @@
     </footer>
 
     <script>
+        
         function toggleNav() {
             const nav = document.querySelector('.nav');
             const burger = document.querySelector('.burger');
@@ -104,12 +105,10 @@
 
         window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY;
-        const fadeOutPoint = 300; // Adjust this value for when the fade starts
+        const fadeOutPoint = 300; // This shows when the fade starts
         const opacity = 1 - scrollPosition / fadeOutPoint;
         heroSection.style.opacity = Math.max(opacity, 0.2); // Minimum opacity to avoid disappearing completely
         });
-
-        
     </script>
 </body>
 </html>

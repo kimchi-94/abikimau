@@ -82,7 +82,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-size: 1.5rem; 
     color: #F3F6F4; /* Match navbar text color */
     font-weight: 600;
     pointer-events: none; /* Prevent overlap issues */
@@ -92,20 +92,20 @@ header {
 .navbar-logo {
     display: flex;
     align-items: center;
-    height: 100%; /* Adjust to match the navbar height */
+    height: 100%; 
 }
 
 .navbar-logo img {
-    height: 40px; /* Adjust as per your design */
+    height: 40px; 
     width: auto; /* Maintain aspect ratio */
 }
 
 /* Hero Section */
 /* Hero section logo size */
 .logo {
-    width: 400px; /* Adjust as needed */
+    width: 400px; 
     height: auto; /* Maintain aspect ratio */
-    margin: 20px auto; /* Optional: Adds some space around the logo */
+    margin: 20px auto; /* Adds some space around the logo */
 }
 
 /* Add bg colour + scroll effect */
@@ -137,7 +137,7 @@ header {
 }
 
 .carousel-item {
-    flex: 0 0 calc(33.333% - 14px); /* Adjust based on how many items you want visible */
+    flex: 0 0 calc(33.333% - 14px); 
     min-width: 300px;
 }
 
@@ -161,7 +161,6 @@ header {
 .carousel-container:hover {
     animation-play-state: paused;
 }
-
 
 /* Keyframes for scrolling animation */
 @keyframes scrolling {
