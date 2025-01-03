@@ -5,6 +5,7 @@ body {
     background-color: #F3F6F4;
     color: #354F44;
     text-align: center; /* Aligning text to center */
+    padding-bottom: 80px;
 }
 
 header {
@@ -52,7 +53,7 @@ header {
     flex-direction: column;
     background-color: #1E4B26;
     width: 100%;
-    text-align: center;
+    text-align: right;
     padding: 1rem 0;
 }
 
@@ -76,8 +77,51 @@ header {
 .nav-links a:hover {
     color: #FFD166;
 }
+/* Writing Dimensions in the center of the Navbar */
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #F3F6F4; /* Match navbar text color */
+    font-weight: 600;
+    pointer-events: none; /* Prevent overlap issues */
+}
+
+/* Logo Left Navbar */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Adjust to match the navbar height */
+}
+
+.navbar-logo img {
+    height: 40px; /* Adjust as per your design */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Hero Section */
+/* Hero section logo size */
+.logo {
+    width: 400px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Optional: Adds some space around the logo */
+}
+
+/* Add bg colour + scroll effect */
+#land {
+    background-color: #1E4B26; /* Adds the desired background color */
+    color: #FFFFFF; /* Changes the text color to white */
+    text-align: center; /* Ensures text is centered */
+    padding: 50px 20px; /* Adjust spacing for aesthetics */
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
 
 /* Gallery Section */
+#gallery {
+    padding-bottom: 40px; 
+}
+
 .carousel {
     position: relative;
     width: 100%;
@@ -152,4 +196,18 @@ header {
     .carousel {
         display: flex;
     }
+}
+
+/*Footer social media icons */ 
+.socials {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Makes the icons align horizontally */
+    gap: 10px; /* Adds spacing between icons */
+    justify-content: center; /* Centers the icons */
+}
+
+.socials li {
+    display: inline-block; /* Ensures list items display inline */
 }
