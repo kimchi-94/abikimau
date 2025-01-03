@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    background-color: #F3F6F4;
+    color: #354F44;
+    text-align: center; /* Aligning text to center */
+}
+
+header {
+    background-color: #1E4B26;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Burger Menu */
+.burger {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #F3F6F4;
+    transition: all 0.3s ease;
+}
+
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Navbar */
+.nav {
+    display: none;
+    flex-direction: column;
+    background-color: #1E4B26;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.nav.nav-active {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #F3F6F4;
+    text-decoration: none;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    color: #FFD166;
+}
+
+/* Gallery Section */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 20px;
+    animation: carousel 20s linear infinite;
+}
+
+.carousel-item {
+    flex: 0 0 calc(33.333% - 14px); /* Adjust based on how many items you want visible */
+    min-width: 300px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move by half the width since we duplicated the items */
+    }
+}
+
+/* Pause animation on hover */
+.carousel-container:hover {
+    animation-play-state: paused;
+}
+
+
+/* Keyframes for scrolling animation */
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Clone the first image at the end of the carousel for seamless loop */
+.carousel .carousel-item:first-child {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .carousel {
+        display: flex;
+    }
+}
