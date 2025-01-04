@@ -164,23 +164,23 @@ section {
 } Changing sponsors container to have images set*/
  /* Style the container */
 .sponsors-container {
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow images to wrap to the next line */
-    justify-content: center; /* Center images horizontally */
-    gap: 20px; /* Space between images */
-    padding: 20px; /* Add some padding */
-    max-width: 1200px; /* Limit the width of the container */
-    margin: 0 auto; /* Center the container */
-    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
-    background-color: #f9f9f9; /* Optional: Add a background color */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    border: 2px solid #ccc; /* A border for better visibility */
+    background-color: #ccc; /* background color */
   }
   
-  /* Style the images */
+  /* Style the sponsor images */
   .sponsors-container img {
-    max-width: 150px; /* Limit the width of each image */
-    max-height: 100px; /* Limit the height of each image */
-    object-fit: contain; /* Ensure images are scaled proportionally */
-    display: block; /* Prevent inline spacing issues */
+    max-width: 100px; 
+    max-height: 100px; 
+    object-fit: contain; 
+    display: block; 
   }
 
 .box {
