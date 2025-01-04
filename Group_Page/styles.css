@@ -21,6 +21,12 @@
     color: var(--text-color);
 }
 
+h2 {
+    font-family: 'Roboto', sans-serif; /* Use the imported font */
+    font-weight: 700; /* Ensure the correct weight is applied */
+    font-size: 2rem; /* Optional: Adjust the size */
+  }
+
 a {
     text-decoration: none;
 }
@@ -156,12 +162,7 @@ section {
 }
 
 /* Sponsors Section */
-/*.sponsors-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-    padding: 2em;
-} Changing sponsors container to have images set*/
+ 
  /* Style the container */
 .sponsors-container {
     display: flex; 
