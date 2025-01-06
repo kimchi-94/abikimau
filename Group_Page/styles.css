@@ -5,6 +5,8 @@
     --background: #262843;
     --second-background: #94b5c1;
     --text-color: white;
+    --second-color: #f4dc9a;
+    --third-color: 
     --border-color: rgb(49, 49, 49);
     --border-hover: rgb(100, 100, 100);
     --section-padding: 5% 15%;
@@ -17,15 +19,14 @@
     box-sizing: border-box;
     list-style: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins';
-    color: var(--text-color);
+   /* font-family: 'Poppins'; */
+   /*  color: var(--text-color); */
 }
 
 h1 {
-   --font-family: "Archivo Black", serif;
-    --font-weight: 400;
-    --text-color: #f4dc9a
-    --font-style: normal;
+    font-family: "Archivo Black", serif;
+    font-weight: 400;
+    color: var(--second-color), !important;
 }
 
 
@@ -33,6 +34,7 @@ h2 {
     font-family: 'Roboto', sans-serif; 
     font-weight: 700;
     font-size: 2rem; 
+    color: var(--text-color);
 }
 
 p .contentbody{
@@ -171,6 +173,12 @@ section {
     max-width: 50%;
     flex-grow: 1;
     text-align: left;
+}
+
+h1 .about-info{
+    font-family: "Archivo Black", serif;
+    font-weight: 400;
+    color: var(--second-color), !important;
 }
 
 /* Sponsors Section */
