@@ -2,11 +2,9 @@
    1. CSS Variables & Reset
    =============================== */
    :root {
-    --background: #262843;
-    --second-background: #94b5c1;
+    --background: rgb(24,24,24);
+    --second-background: rgb(21,21,21);
     --text-color: white;
-    --second-color: #f4dc9a;
-    --third-color: 
     --border-color: rgb(49, 49, 49);
     --border-hover: rgb(100, 100, 100);
     --section-padding: 5% 15%;
@@ -19,27 +17,19 @@
     box-sizing: border-box;
     list-style: none;
     scroll-behavior: smooth;
-   /* font-family: 'Poppins'; */
-   /*  color: var(--text-color); */
+    font-family: 'Poppins';
+    color: var(--text-color);
 }
-
-h1 {
-    font-family: "Archivo Black", serif;
-    font-weight: 400;
-    color: var(--second-color), !important;
-}
-
 
 h2 {
     font-family: 'Roboto', sans-serif; 
     font-weight: 700;
     font-size: 2rem; 
-    color: var(--text-color);
 }
 
 p .contentbody{
     font-family: "Roboto Slab", serif, !important;
-    font-optical-sizing: auto; 
+  /*  font-optical-sizing: auto; */
     font-weight: 200;
     font-style: normal;
 }
@@ -53,39 +43,53 @@ body {
     background-color: var(--background);
 }
 
-/* Logo Styling */
-.logo {
-    height: 40px; /* Adjust size as needed */
-    width:auto;
-    margin-right: 20px; /* Spacing from menu items */
-  }
-  
-  /* Navbar Item Styling */
-  .navbar {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 18px; /* Adjust font size */
-    padding: 0 15px; /* Add spacing between items */
-    color: #fff;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color:#d1e8ff; /* Highlight color on hover */
-  }
-  
-  /* Center Navbar Links */
-  .navbar-collapse {
-    justify-content: center;
-  }
-  
-  .navbar .navbar-brand img, .logo {
-    width: 140px; /* Adjust the width */
-    height: auto; /* Maintain the aspect ratio */
-    margin-right: 20px; /* Adjust spacing from menu items if needed */
+/* ===============================
+   2. Navigation Styles
+   =============================== */
+nav {
+    width: 1200px;
+    max-width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
 }
 
+nav .logo {
+    display: flex;
+    align-items: left;
+    height: 100%; 
+   /* font-weight: bold; */
+}
+
+.navbar-brand img {
+    height: 40px; 
+    width: auto; /* Maintain aspect ratio */
+}
+
+nav .links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 20px);  /* Responsive gap that shrinks on smaller screens */
+    flex-wrap: nowrap;  /* Prevent wrapping */
+}
+
+nav ul a {
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: var(--transition);
+    white-space: nowrap;  /* Prevent text wrapping */
+    font-size: clamp(0.8rem, 1.5vw, 1rem);  /* Responsive font size */
+}
+
+nav ul a:hover {
+    opacity: 1;
+}
 
 /* ===============================
    3. Button Styles
@@ -100,7 +104,6 @@ body {
     border: 2px solid var(--text-color);
     cursor: pointer;
     transition: var(--transition);
-    text-decoration: none;
 }
 
 .btn:hover, .btn-exhibition:hover {
@@ -119,7 +122,6 @@ body {
 section {
     min-height: 100vh;
     padding: var(--section-padding);
-    background-color: var(--background);
 }
 
 /* Home Section */
@@ -129,7 +131,6 @@ section {
     align-items: center;
     justify-content: center;
     gap: 2em;
-    background-color: var(--background);
 }
 
 .info-box {
@@ -175,12 +176,6 @@ section {
     text-align: left;
 }
 
-h1 .about-info{
-    font-family: "Archivo Black", serif;
-    font-weight: 400;
-    color: var(--second-color), !important;
-}
-
 /* Sponsors Section */
  
  /* Style the container */
@@ -192,7 +187,8 @@ h1 .about-info{
     padding: 20px; 
     max-width: 800px; 
     margin: 0 auto; 
-    background-color: var(--background); /* background color */
+    border: 2px solid #ccc; /* A border for better visibility */
+    background-color: #ccc; /* background color */
   }
   
   /* Style the sponsor images */
@@ -206,7 +202,6 @@ h1 .about-info{
 .box {
     border: 3px solid var(--border-color);
     border-radius: 0.5em;
-    background-color: #fff;
     padding: 3em;
     display: flex;
     flex-direction: column;
@@ -220,7 +215,7 @@ h1 .about-info{
    =============================== */
 .slider {
     height: 100vh;
-    margin: 0;
+    margin-top: -50px;
     position: relative;
 }
 
@@ -371,10 +366,6 @@ h1 .about-info{
     position: absolute;
     inset: auto 10px 10px 10px;
 }
-.exhibition-footer {
-    background-color: #404040; /* Set to your desired gray color */
-    color: white; /* Adjust text color for visibility */
-}
 
 /* ===============================
    6. Form Styles
@@ -409,7 +400,6 @@ form input {
     border-radius: 0.5em;
     border: none;
     outline: none;
-    color: #000;
 }
 
 form input:focus {
@@ -422,18 +412,18 @@ form input:focus {
     padding-bottom: 3em; /* Reduce bottom padding */
 }
 
-
-.social-icons span {
-    font-size: 2rem; /* Adjust this to make the icons bigger */
-    margin: 0 10px; /* Add spacing between icons */
-    display: inline-block;
-    transition: transform 0.2s ease-in-out;
+/* ===============================
+   7. Footer Styles
+   =============================== */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 10em);
+    padding: 3em 15%;
+    background-color: var(--background);
+    margin-top: 0;
 }
-
-.social-icons span:hover {
-    transform: scale(1.2); /* Slightly enlarges icon on hover */
-}
-
 
 /* ===============================
    8. Responsive Design
