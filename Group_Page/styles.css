@@ -51,6 +51,10 @@ body {
   }
   
   /* Navbar Item Styling */
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
   .navbar-nav .nav-link {
     font-size: 18px; /* Adjust font size */
     padding: 0 15px; /* Add spacing between items */
@@ -200,7 +204,7 @@ section {
    =============================== */
 .slider {
     height: 100vh;
-    margin-top: -50px;
+    margin: 0;
     position: relative;
 }
 
@@ -351,6 +355,10 @@ section {
     position: absolute;
     inset: auto 10px 10px 10px;
 }
+.#exhibition-footer {
+    background-color: #404040; /* Set to your desired gray color */
+    color: white; /* Adjust text color for visibility */
+}
 
 /* ===============================
    6. Form Styles
@@ -398,18 +406,6 @@ form input:focus {
     padding-bottom: 3em; /* Reduce bottom padding */
 }
 
-/* ===============================
-   7. Footer Styles
-   =============================== */
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(2rem, 5vw, 10em);
-    padding: 3em 15%;
-    background-color: var(--background);
-    margin-top: 0;
-}
 
 .social-icons span {
     font-size: 2rem; /* Adjust this to make the icons bigger */
@@ -421,6 +417,7 @@ footer {
 .social-icons span:hover {
     transform: scale(1.2); /* Slightly enlarges icon on hover */
 }
+
 
 /* ===============================
    8. Responsive Design
