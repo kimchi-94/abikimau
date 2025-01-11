@@ -47,29 +47,29 @@ body {
    2. Navigation Styles
    =============================== */
    nav {
-    width: 100%; /* Make the navbar span the full width of the viewport */
-    max-width: 100%; /* Ensure it doesn’t exceed the screen width */
-    margin: 0; /* Remove margin for a seamless sticky effect */
-    padding: 1rem 2rem; /* Add padding for spacing */
+    width: 100%; 
+    max-width: 100%; 
+    margin: 0; 
+    padding: 1rem 2rem; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky; /* Make it sticky */
-    top: 0; /* Stick to the top of the viewport */
-    z-index: 1000; /* Ensure it stays above other elements */
-    background-color: #1a1a1a; /* Add a background color for visibility */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for emphasis */
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    background-color: #1a1a1a; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 nav .logo {
     display: flex;
-    align-items: center; /* Center logo vertically */
+    align-items: center; 
     height: 100%; 
 }
 
 .navbar-brand img {
-    height: 20px; /* Adjust logo height */
-    width: auto; /* Maintain aspect ratio */
+    height: 20px; 
+    width: auto; 
 }
 
 nav .links {
@@ -78,22 +78,22 @@ nav .links {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: clamp(10px, 2vw, 20px); /* Responsive gap for spacing */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: clamp(10px, 2vw, 20px); 
+    flex-wrap: nowrap; 
 }
 
 nav ul a {
     color: var(--text-color);
     opacity: 0.7;
     transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
-    white-space: nowrap; /* Prevent text wrapping */
-    font-size: clamp(0.8rem, 1.5vw, 1rem); /* Responsive font size */
-    text-decoration: none; /* Remove underline from links */
+    white-space: nowrap; 
+    font-size: clamp(0.8rem, 1.5vw, 1rem); 
+    text-decoration: none; 
 }
 
 nav ul a:hover {
     opacity: 1;
-    color: #fad564; /* Highlight color on hover */
+    color: #fc7b43;
 }
 
 
@@ -185,7 +185,7 @@ section {
 /* Sponsors Section */
  
  /* Style the container */
-.sponsors-container {
+ .sponsors-container {
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
@@ -193,9 +193,28 @@ section {
     padding: 20px; 
     max-width: 800px; 
     margin: 0 auto; 
-    border: 2px solid #ccc; /* A border for better visibility */
-    background-color: #ccc; /* background color */
-  }
+  
+}
+
+.sponsors-container .box {
+    width: calc(33.333% - 20px); /* Ensures three boxes per row with spacing */
+    background-color: white; /* Default background color for each box */
+    padding: 20px; 
+    border-radius: 8px; 
+    text-align: center; 
+    font-size: 16px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Hover Effect */
+.sponsors-container .box:hover {
+    transform: scale(1.05);
+    background-color: #fc7b43; /* Highlight color on hover */
+    color: #1a1a1a; /* Change text color */
+}
+
   
   /* Style the sponsor images */
   .sponsors-container img {
