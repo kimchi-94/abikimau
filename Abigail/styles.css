@@ -5,6 +5,10 @@
     box-sizing: border-box;
   }
   
+  h1{
+    color: #fad564;
+    font-weight: bold;
+  }
   body {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -21,12 +25,22 @@
   }
   
   /* Adjust Headings */
+ 
 h2 {
-    font-size: 36px;
-    font-weight: bold; 
-    margin-bottom: 20px; 
-    margin-top: 0; 
-    text-align: center; 
+  font-size: 36px;
+  font-weight:bolder;
+  margin-bottom: 20px;
+  margin-top: 0;
+  text-align: center;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+    
+    h2:hover {
+      color: #fad564; /* Change text color on hover */
+      transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+    
   }
   
   p {
@@ -56,7 +70,7 @@ h2 {
   }
   
   .navbar .nav-link:hover {
-    color: #4caf50;
+    color: #fad564;
   }
   
   /* Navbar Logo */
@@ -105,70 +119,139 @@ h2 {
     margin: 0 auto;
     line-height: 1.6;
   }
-  
-  /* Exhibits */
+  /* Exhibits Section */
 #exhibits {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #914e56; 
-    text-align: center;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #8ebd9d; /* Light greenish background */
+  padding: 40px 20px;
+}
 
-  }
-  
-  #exhibits h2 {
-    margin-bottom: 20px;
-  }
-  
-  .view-exhibits-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white; /* Keep text visible */
-    background-color: transparent; /* Transparent button */
-    border: 2px solid white; /* Optional: Add a border for visibility */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-  
-  .view-exhibits-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly opaque black on hover */
-  }
-  
+#exhibits h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #1a1a1a;
+}
+
+/* Grid Navigation */
+.grid-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.1);
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Spacing between items */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Exhibit Box */
+.exhibit {
+  background-color: #1a1a1a; /* Dark background */
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden; /* Ensure hover effect stays inside */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exhibit:hover {
+  transform: scale(1.05); /* Slight zoom-in on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.exhibit img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid #8ebd9d; /* Add a divider color */
+}
+
+.exhibit p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.exhibit:hover p {
+  color: #fad564; /* Change text color on hover */
+}
+
+  /* Hover Effect for #exhibits h2 */
+#exhibits h2:hover {
+  color: #fad564; /* Restore hover effect */
+  transform: scale(1.1); /* Add a zoom effect */
+}
   
   /* Sponsors Section */
-#sponsors {
+  #sponsors {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#E6D389;
+    background-color: #1b475d;
     padding: 40px 20px;
     text-align: center;
-  }
-  
-  .grid-container {
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(2, auto); /* 2 rows */
     gap: 20px; /* Spacing between items */
     max-width: 800px;
-    width: 300%;
-  }
-  
-  .sponsor {
-    background-color:#1a1a1a;
+    width: 100%;
+}
+
+.sponsor {
+    background-color: #1a1a1a;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     font-size: 16px;
-    color:white;
+    color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%; /* Make it responsive */
+    aspect-ratio: 1 / 1; /* Ensure boxes are square */
+    display: flex; /* Center content */
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor:hover {
+    transform: scale(1.1);
+    background-color: #2d6180;
+    color: #fad564; /* Text color changes */
+    font-weight: bold; /* Text becomes bold */
+}
+
   
   /* Contact*/
  /* Contact Section */
@@ -179,13 +262,13 @@ h2 {
     align-items: center;
     text-align: center;
     padding: 40px 20px;
-    background-color: #f4f4f9;
+    background-color: #1b475d;
   }
   
   #contact h2 {
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #1a1a1a;
+    font-size: 35px;
+    color: #fad564;
   }
   
   .contact-form {
@@ -205,7 +288,7 @@ h2 {
   .form-group label {
     font-size: 14px;
     margin-bottom: 5px;
-    color:#1a1a1a;
+    color:#fad564;
   }
   
   .form-group input,
@@ -235,6 +318,6 @@ h2 {
   }
   
   .submit-btn:hover {
-    background-color: #45a049;
+    background-color: #fad564;
   }
   
