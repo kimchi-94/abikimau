@@ -2,9 +2,10 @@
    1. CSS Variables & Reset
    =============================== */
    :root {
-    --background: rgb(24,24,24);
+    --background: #1a1a1a;
     --second-background: rgb(21,21,21);
     --text-color: white;
+    --accent-color: #fc7b43;
     --border-color: rgb(49, 49, 49);
     --border-hover: rgb(100, 100, 100);
     --section-padding: 5% 15%;
@@ -94,7 +95,7 @@ nav ul a {
 
 nav ul a:hover {
     opacity: 1;
-    color: #fc7b43;
+    color: var(--accent-color);
 }
 
 
@@ -103,7 +104,7 @@ nav ul a:hover {
    =============================== */
    .btn, .btn-exhibition {
     padding: 0.5em 1em;
-    color: #ffffff; /* Default text color */
+    color: var(--text-color); /* Default text color */
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 0.5em;
@@ -115,9 +116,9 @@ nav ul a:hover {
 }
 
 .btn:hover, .btn-exhibition:hover {
-    background-color: #fc7b43; /* Background color on hover */
-    color: #1a1a1a; /* Text color on hover */
-    border-color: #ffffff; /* Border color on hover */
+    background-color: var(--accent-color); /* Background color on hover */
+    color: var(--background); /* Text color on hover */
+    border-color: var(--text-color); /* Border color on hover */
 }
 
 .btn-exhibition {
@@ -203,7 +204,7 @@ section {
     width: calc(33.333% - 20px); /* Ensures three boxes per row with spacing */
     min-width: 250px;
     aspect-ratio: 1 / 1;
-    background-color: white; /* Default background color for each box */
+    background-color: var(--text-color); /* Default background color for each box */
     padding: 20px; 
     border-radius: 8px; 
     text-align: center; 
@@ -237,8 +238,8 @@ section {
 /* Hover Effect */
 .sponsors-container .box:hover {
     transform: scale(1.05);
-    background-color: #fc7b43; /* Highlight color on hover */
-    color: #1a1a1a; /* Change text color */
+    background-color: var(--accent-color); /* Highlight color on hover */
+    color: var(--background); /* Change text color */
 }
 
   
@@ -372,7 +373,7 @@ section {
 
 .arrows button:hover {
     background-color: #eee;
-    color: black;
+    color: var(--background);
 }
 
 /* Slider - Thumbnails */
@@ -442,7 +443,7 @@ form .input-box {
 .input-box span {
     font-size: 1.2em; /* Adjusted font size for labels */
     margin-bottom: 0.2em;
-    color: white; /* Set labels (Full Name, Email, Message) to white */
+    color: var(--text-color); /* Set labels (Full Name, Email, Message) to white */
 }
 
 form input,
@@ -454,12 +455,12 @@ form textarea {
     border: none;
     outline: none;
     color: black; /* Text inside input fields is black */
-    background-color: white; /* Set background color to white for better contrast */
+    background-color: var(--text-color); /* Set background color to white for better contrast */
 }
 
 form input:focus,
 form textarea:focus {
-    background-color: white;
+    background-color: var(--text-color);
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Adjust shadow for focus */
 }
 
@@ -499,7 +500,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: #fc7b43;
+    color: var(--accent-color);
     transform: scale(1.2);
 }
 
@@ -580,12 +581,12 @@ footer {
     
     .social-icons a {
         font-size: 2rem; /* Increase font size for larger icons */
-        color: white; /* Default icon color */
+        color: var(--text-color); /* Default icon color */
         transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
     }
     
     .social-icons a:hover {
-        color: #fc7b43; /* Change color on hover */
+        color: var(--accent-color); /* Change color on hover */
         transform: scale(1.2); /* Slight zoom effect on hover */
     }
     
