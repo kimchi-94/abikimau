@@ -1,55 +1,62 @@
-let items = document.querySelectorAll('.slider .list .item');
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let thumbnails = document.querySelectorAll('.thumbnail .item');
+let items = document.querySelectorAll(".slider .list .item");
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+let thumbnails = document.querySelectorAll(".thumbnail .item");
 
-//config param
+// Config parameters
 let countItem = items.length;
 let itemActive = 0;
-//event next click
-next.onclick = function(){
+
+// Event: Next click
+next.onclick = function () {
     itemActive = itemActive + 1;
-    if(itemActive >= countItem){
+    if (itemActive >= countItem) {
         itemActive = 0;
     }
     showSlider();
-}
+};
 
-//event prev click
-prev.onclick = function(){
+// Event: Prev click
+prev.onclick = function () {
     itemActive = itemActive - 1;
-    if(itemActive < 0){
+    if (itemActive < 0) {
         itemActive = countItem - 1;
     }
     showSlider();
-}
+};
+
+//This part of the code activates the automatic slider carousel
+
 //auto run slider
 //let refreshInterval = setInterval(() => {
 //    next.click();
 //}, 5000)
 
-function showSlider(){
-    //remove item active old
-    let itemActiveOld = document.querySelector('.slider .list .item.active');
-    let thumbnailActiveOld = document.querySelector('.thumbnail .item.active')
-    itemActiveOld.classList.remove('active');
-    thumbnailActiveOld.classList.remove('active');
+// Function to update the slider
+function showSlider() {
+    // Remove active class from the old item
+    let itemActiveOld = document.querySelector(".slider .list .item.active");
+    let thumbnailActiveOld = document.querySelector(".thumbnail .item.active");
+    if (itemActiveOld) itemActiveOld.classList.remove("active");
+    if (thumbnailActiveOld) thumbnailActiveOld.classList.remove("active");
 
-    //active new item
-    items[itemActive].classList.add('active');
-    thumbnails[itemActive].classList.add('active');
+    // Add active class to the new item
+    items[itemActive].classList.add("active");
+    thumbnails[itemActive].classList.add("active");
 
+ //This part of the code declares the time between the change of slides
     //clear auto time run slider
    // clearInterval(refreshInterval);
     //refreshInterval = setInterval(() => {
      //   next.click();
    // }, 5000)
+
 }
 
-//click thumbnail
+// Click thumbnails to navigate
 thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener('click', () => {
+    thumbnail.addEventListener("click", function () {
         itemActive = index;
         showSlider();
-    })
-})
+    });
+});
